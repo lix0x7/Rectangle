@@ -155,6 +155,8 @@ class WindowCalculationFactory {
     static let firstThreeFourthsCalculation = FirstThreeFourthsCalculation()
     static let centerThreeFourthsCalculation = CenterThreeFourthsCalculation()
     static let lastThreeFourthsCalculation = LastThreeFourthsCalculation()
+    static let centerFiveSixthsCalculation = CenterFiveSixthsCalculation()
+    static let bottomFiveSixthsCalculation = BottomFiveSixthsCalculation()
     static let topLeftSixthCalculation = TopLeftSixthCalculation()
     static let topCenterSixthCalculation = TopCenterSixthCalculation()
     static let topRightSixthCalculation = TopRightSixthCalculation()
@@ -231,6 +233,8 @@ class WindowCalculationFactory {
      .firstThreeFourths: firstThreeFourthsCalculation,
      .centerThreeFourths: centerThreeFourthsCalculation,
      .lastThreeFourths: lastThreeFourthsCalculation,
+     .centerFiveSixths: centerFiveSixthsCalculation,
+     .bottomFiveSixths: bottomFiveSixthsCalculation,
      .topLeftSixth: topLeftSixthCalculation,
      .topCenterSixth: topCenterSixthCalculation,
      .topRightSixth: topRightSixthCalculation,

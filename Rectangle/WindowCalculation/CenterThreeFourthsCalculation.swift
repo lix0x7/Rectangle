@@ -34,3 +34,28 @@ class CenterThreeFourthsCalculation: WindowCalculation, OrientationAware {
     }
 }
 
+class CenterFiveSixthsCalculation: WindowCalculation, OrientationAware {
+
+    override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
+        let visibleFrameOfScreen = params.visibleFrameOfScreen
+        return orientationBasedRect(visibleFrameOfScreen)
+    }
+
+    func landscapeRect(_ visibleFrameOfScreen: CGRect) -> RectResult {
+        var rect = visibleFrameOfScreen
+        rect.origin.x = visibleFrameOfScreen.minX + floor(visibleFrameOfScreen.width / 6.0) / 2
+        rect.origin.y = visibleFrameOfScreen.minY
+        rect.size.width = visibleFrameOfScreen.width / 6.0 * 5
+        rect.size.height = visibleFrameOfScreen.height
+        return RectResult(rect, subAction: .centerVerticalFiveSixths)
+    }
+
+    func portraitRect(_ visibleFrameOfScreen: CGRect) -> RectResult {
+        var rect = visibleFrameOfScreen
+        rect.origin.x = visibleFrameOfScreen.minX
+        rect.origin.y = visibleFrameOfScreen.minY + floor(visibleFrameOfScreen.height / 6.0) / 2
+        rect.size.width = visibleFrameOfScreen.width
+        rect.size.height = visibleFrameOfScreen.height / 6.0 * 5
+        return RectResult(rect, subAction: .centerHorizontalFiveSixths)
+    }
+}
