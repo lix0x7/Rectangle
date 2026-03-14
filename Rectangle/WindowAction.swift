@@ -106,7 +106,7 @@ enum WindowAction: Int, Codable {
          topVerticalTwoThirds = 90,
          bottomVerticalTwoThirds = 91,
          centerFiveSixths = 92,
-         bottomFiveSixths = 93
+         bottomNineTenths = 93
 
     // Order matters here - it's used in the menu
     static let active = [leftHalf, rightHalf, centerHalf, topHalf, bottomHalf,
@@ -117,7 +117,7 @@ enum WindowAction: Int, Codable {
                          center, centerProminently, restore,
                          nextDisplay, previousDisplay,
                          moveLeft, moveRight, moveUp, moveDown,
-                         firstFourth, secondFourth, thirdFourth, lastFourth, firstThreeFourths, centerThreeFourths, lastThreeFourths, centerFiveSixths, bottomFiveSixths,
+                         firstFourth, secondFourth, thirdFourth, lastFourth, firstThreeFourths, centerThreeFourths, lastThreeFourths, centerFiveSixths, bottomNineTenths,
                          topLeftSixth, topCenterSixth, topRightSixth, bottomLeftSixth, bottomCenterSixth, bottomRightSixth,
                          specified, reverseAll,
                          topLeftNinth, topCenterNinth, topRightNinth,
@@ -201,7 +201,7 @@ enum WindowAction: Int, Codable {
         case .centerThreeFourths: return "centerThreeFourths"
         case .lastThreeFourths: return "lastThreeFourths"
         case .centerFiveSixths: return "centerFiveSixths"
-        case .bottomFiveSixths: return "bottomFiveSixths"
+        case .bottomNineTenths: return "bottomNineTenths"
         case .topLeftSixth: return "topLeftSixth"
         case .topCenterSixth: return "topCenterSixth"
         case .topRightSixth: return "topRightSixth"
@@ -371,9 +371,9 @@ enum WindowAction: Int, Codable {
         case .centerFiveSixths:
             key = "centerFiveSixths.title"
             value = "Center Five Sixths"
-        case .bottomFiveSixths:
-            key = "bottomFiveSixths.title"
-            value = "Bottom Five Sixths"
+        case .bottomNineTenths:
+            key = "bottomNineTenths.title"
+            value = "Bottom Nine Tenths"
         case .topLeftSixth:
             key = "mFt-Kg-UYG.title"
             value = "Top Left Sixth"
@@ -561,7 +561,7 @@ enum WindowAction: Int, Codable {
         case .centerThreeFourths: return NSImage(imageLiteralResourceName: "centerThreeFourthsTemplate")
         case .lastThreeFourths: return NSImage(imageLiteralResourceName: "lastThreeFourthsTemplate")
         case .centerFiveSixths: return NSImage()
-        case .bottomFiveSixths: return NSImage()
+        case .bottomNineTenths: return NSImage()
         case .topLeftSixth: return NSImage(imageLiteralResourceName: "topLeftSixthTemplate")
         case .topCenterSixth: return NSImage(imageLiteralResourceName: "topCenterSixthTemplate")
         case .topRightSixth: return NSImage(imageLiteralResourceName: "topRightSixthTemplate")
@@ -622,7 +622,7 @@ enum WindowAction: Int, Codable {
         case .leftHalf: return .right
         case .rightHalf: return .left
         case .bottomHalf: return .top
-        case .bottomFiveSixths: return .top
+        case .bottomNineTenths: return .top
         case .topHalf: return .bottom
         case .bottomLeft: return [.top, .right]
         case .bottomRight: return [.top, .left]
@@ -640,7 +640,7 @@ enum WindowAction: Int, Codable {
     var gapsApplicable: Dimension {
         switch self {
         case .leftHalf, .rightHalf, .bottomHalf, .topHalf, .centerHalf, .bottomLeft, .bottomRight, .topLeft, .topRight, .firstThird, .firstTwoThirds, .centerThird, .centerTwoThirds, .lastTwoThirds, .lastThird,
-                .firstFourth, .secondFourth, .thirdFourth, .lastFourth, .firstThreeFourths, .centerThreeFourths, .lastThreeFourths, .centerFiveSixths, .bottomFiveSixths, .topLeftSixth, .topCenterSixth, .topRightSixth, .bottomLeftSixth, .bottomCenterSixth, .bottomRightSixth,
+                .firstFourth, .secondFourth, .thirdFourth, .lastFourth, .firstThreeFourths, .centerThreeFourths, .lastThreeFourths, .centerFiveSixths, .bottomNineTenths, .topLeftSixth, .topCenterSixth, .topRightSixth, .bottomLeftSixth, .bottomCenterSixth, .bottomRightSixth,
             .topLeftNinth, .topCenterNinth, .topRightNinth, .middleLeftNinth, .middleCenterNinth, .middleRightNinth, .bottomLeftNinth, .bottomCenterNinth, .bottomRightNinth,
             .topLeftThird, .topRightThird, .bottomLeftThird, .bottomRightThird,
             .topLeftEighth, .topCenterLeftEighth, .topCenterRightEighth, .topRightEighth,
@@ -666,7 +666,7 @@ enum WindowAction: Int, Codable {
     var category: WindowActionCategory? { // used to specify a submenu
         switch self {
         case .firstFourth, .secondFourth, .thirdFourth, .lastFourth, .firstThreeFourths, .centerThreeFourths, .lastThreeFourths: return .fourths
-        case .centerFiveSixths, .bottomFiveSixths, .topLeftSixth, .topCenterSixth, .topRightSixth, .bottomLeftSixth, .bottomCenterSixth, .bottomRightSixth: return .sixths
+        case .centerFiveSixths, .topLeftSixth, .topCenterSixth, .topRightSixth, .bottomLeftSixth, .bottomCenterSixth, .bottomRightSixth: return .sixths
         case .topLeftEighth, .topCenterLeftEighth, .topCenterRightEighth, .topRightEighth, .bottomLeftEighth, .bottomCenterLeftEighth, .bottomCenterRightEighth, .bottomRightEighth: return .eighths
         case .moveUp, .moveDown, .moveLeft, .moveRight: return .move
         default: return nil

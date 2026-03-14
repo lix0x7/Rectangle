@@ -33,7 +33,7 @@ class BottomHalfCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalcul
     
 }
 
-class BottomFiveSixthsCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalculation {
+class BottomNineTenthsCalculation: WindowCalculation, RepeatedExecutionsInThirdsCalculation {
 
     override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
 
@@ -45,7 +45,7 @@ class BottomFiveSixthsCalculation: WindowCalculation, RepeatedExecutionsInThirds
     }
     
     func calculateFirstRect(_ params: RectCalculationParameters) -> RectResult {
-        return calculateFractionalRect(params, fraction: 5 / 6.0)
+        return calculateFractionalRect(params, fraction: 9 / 10.0)
     }
 
     func calculateFractionalRect(_ params: RectCalculationParameters, fraction: Float) -> RectResult {

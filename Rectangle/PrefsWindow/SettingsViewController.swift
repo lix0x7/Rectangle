@@ -292,8 +292,8 @@ class SettingsViewController: NSViewController {
             bottomVerticalTwoThirdsLabel.alignment = .right
             let centerFiveSixthsLabel = NSTextField(labelWithString: NSLocalizedString("Center Five Sixths", tableName: "Main", value: "", comment: ""))
             centerFiveSixthsLabel.alignment = .right
-            let bottomFiveSixthsLabel = NSTextField(labelWithString: NSLocalizedString("Bottom Five Sixths", tableName: "Main", value: "", comment: ""))
-            bottomFiveSixthsLabel.alignment = .right
+            let bottomNineTenthsLabel = NSTextField(labelWithString: NSLocalizedString("Bottom Nine Tenths", tableName: "Main", value: "", comment: ""))
+            bottomNineTenthsLabel.alignment = .right
 
             let topLeftEighthLabel = NSTextField(labelWithString: NSLocalizedString("Top Left Eighth", tableName: "Main", value: "", comment: ""))
             topLeftEighthLabel.alignment = .right
@@ -321,7 +321,7 @@ class SettingsViewController: NSViewController {
             topVerticalTwoThirdsLabel.translatesAutoresizingMaskIntoConstraints = false
             bottomVerticalTwoThirdsLabel.translatesAutoresizingMaskIntoConstraints = false
             centerFiveSixthsLabel.translatesAutoresizingMaskIntoConstraints = false
-            bottomFiveSixthsLabel.translatesAutoresizingMaskIntoConstraints = false
+            bottomNineTenthsLabel.translatesAutoresizingMaskIntoConstraints = false
             topLeftEighthLabel.translatesAutoresizingMaskIntoConstraints = false
             topCenterLeftEighthLabel.translatesAutoresizingMaskIntoConstraints = false
             topCenterRightEighthLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -340,7 +340,7 @@ class SettingsViewController: NSViewController {
             let topVerticalTwoThirdsShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
             let bottomVerticalTwoThirdsShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
             let centerFiveSixthsShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
-            let bottomFiveSixthsShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
+            let bottomNineTenthsShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
 
             let topLeftEighthShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
             let topCenterLeftEighthShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
@@ -411,7 +411,7 @@ class SettingsViewController: NSViewController {
             topVerticalTwoThirdsShortcutView.setAssociatedUserDefaultsKey(WindowAction.topVerticalTwoThirds.name, withTransformerName: MASDictionaryTransformerName)
             bottomVerticalTwoThirdsShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomVerticalTwoThirds.name, withTransformerName: MASDictionaryTransformerName)
             centerFiveSixthsShortcutView.setAssociatedUserDefaultsKey(WindowAction.centerFiveSixths.name, withTransformerName: MASDictionaryTransformerName)
-            bottomFiveSixthsShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomFiveSixths.name, withTransformerName: MASDictionaryTransformerName)
+            bottomNineTenthsShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomNineTenths.name, withTransformerName: MASDictionaryTransformerName)
 
             topLeftEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.topLeftEighth.name, withTransformerName: MASDictionaryTransformerName)
             topCenterLeftEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.topCenterLeftEighth.name, withTransformerName: MASDictionaryTransformerName)
@@ -432,7 +432,7 @@ class SettingsViewController: NSViewController {
                 topVerticalTwoThirdsShortcutView.shortcutValidator = passThroughValidator
                 bottomVerticalTwoThirdsShortcutView.shortcutValidator = passThroughValidator
                 centerFiveSixthsShortcutView.shortcutValidator = passThroughValidator
-                bottomFiveSixthsShortcutView.shortcutValidator = passThroughValidator
+                bottomNineTenthsShortcutView.shortcutValidator = passThroughValidator
                 topLeftEighthShortcutView.shortcutValidator = passThroughValidator
                 topCenterLeftEighthShortcutView.shortcutValidator = passThroughValidator
                 topCenterRightEighthShortcutView.shortcutValidator = passThroughValidator
@@ -475,9 +475,9 @@ class SettingsViewController: NSViewController {
             centerFiveSixthsIcon.image = WindowAction.centerFiveSixths.image
             centerFiveSixthsIcon.image?.size = NSSize(width: 21, height: 14)
             
-            let bottomFiveSixthsIcon = NSImageView(frame: NSRect(x: 0, y: 0, width: 21, height: 14))
-            bottomFiveSixthsIcon.image = WindowAction.bottomFiveSixths.image
-            bottomFiveSixthsIcon.image?.size = NSSize(width: 21, height: 14)
+            let bottomNineTenthsIcon = NSImageView(frame: NSRect(x: 0, y: 0, width: 21, height: 14))
+            bottomNineTenthsIcon.image = WindowAction.bottomNineTenths.image
+            bottomNineTenthsIcon.image?.size = NSSize(width: 21, height: 14)
 
             let topLeftEighthIcon = NSImageView(frame: NSRect(x: 0, y: 0, width: 21, height: 14))
             topLeftEighthIcon.image = WindowAction.topLeftEighth.image
@@ -567,12 +567,12 @@ class SettingsViewController: NSViewController {
             centerFiveSixthsLabelStack.addArrangedSubview(centerFiveSixthsLabel)
             centerFiveSixthsLabelStack.addArrangedSubview(centerFiveSixthsIcon)
             
-            let bottomFiveSixthsLabelStack = NSStackView()
-            bottomFiveSixthsLabelStack.orientation = .horizontal
-            bottomFiveSixthsLabelStack.alignment = .centerY
-            bottomFiveSixthsLabelStack.spacing = 8
-            bottomFiveSixthsLabelStack.addArrangedSubview(bottomFiveSixthsLabel)
-            bottomFiveSixthsLabelStack.addArrangedSubview(bottomFiveSixthsIcon)
+            let bottomNineTenthsLabelStack = NSStackView()
+            bottomNineTenthsLabelStack.orientation = .horizontal
+            bottomNineTenthsLabelStack.alignment = .centerY
+            bottomNineTenthsLabelStack.spacing = 8
+            bottomNineTenthsLabelStack.addArrangedSubview(bottomNineTenthsLabel)
+            bottomNineTenthsLabelStack.addArrangedSubview(bottomNineTenthsIcon)
 
             let topLeftEighthLabelStack = NSStackView()
             topLeftEighthLabelStack.orientation = .horizontal
@@ -707,12 +707,12 @@ class SettingsViewController: NSViewController {
             centerFiveSixthsRow.addArrangedSubview(centerFiveSixthsLabelStack)
             centerFiveSixthsRow.addArrangedSubview(centerFiveSixthsShortcutView)
             
-            let bottomFiveSixthsRow = NSStackView()
-            bottomFiveSixthsRow.orientation = .horizontal
-            bottomFiveSixthsRow.alignment = .centerY
-            bottomFiveSixthsRow.spacing = 18
-            bottomFiveSixthsRow.addArrangedSubview(bottomFiveSixthsLabelStack)
-            bottomFiveSixthsRow.addArrangedSubview(bottomFiveSixthsShortcutView)
+            let bottomNineTenthsRow = NSStackView()
+            bottomNineTenthsRow.orientation = .horizontal
+            bottomNineTenthsRow.alignment = .centerY
+            bottomNineTenthsRow.spacing = 18
+            bottomNineTenthsRow.addArrangedSubview(bottomNineTenthsLabelStack)
+            bottomNineTenthsRow.addArrangedSubview(bottomNineTenthsShortcutView)
 
             let topLeftEighthRow = NSStackView()
             topLeftEighthRow.orientation = .horizontal
@@ -781,7 +781,7 @@ class SettingsViewController: NSViewController {
             mainStackView.addArrangedSubview(topVerticalTwoThirdsRow)
             mainStackView.addArrangedSubview(bottomVerticalTwoThirdsRow)
             mainStackView.addArrangedSubview(centerFiveSixthsRow)
-            mainStackView.addArrangedSubview(bottomFiveSixthsRow)
+            mainStackView.addArrangedSubview(bottomNineTenthsRow)
             mainStackView.addArrangedSubview(topLeftEighthRow)
             mainStackView.addArrangedSubview(topCenterLeftEighthRow)
             mainStackView.addArrangedSubview(topCenterRightEighthRow)
@@ -814,8 +814,8 @@ class SettingsViewController: NSViewController {
                 bottomVerticalThirdLabel.widthAnchor.constraint(equalTo: topVerticalTwoThirdsLabel.widthAnchor),
                 topVerticalTwoThirdsLabel.widthAnchor.constraint(equalTo: bottomVerticalTwoThirdsLabel.widthAnchor),
                 bottomVerticalTwoThirdsLabel.widthAnchor.constraint(equalTo: centerFiveSixthsLabel.widthAnchor),
-                centerFiveSixthsLabel.widthAnchor.constraint(equalTo: bottomFiveSixthsLabel.widthAnchor),
-                bottomFiveSixthsLabel.widthAnchor.constraint(equalTo: topLeftEighthLabel.widthAnchor),
+                centerFiveSixthsLabel.widthAnchor.constraint(equalTo: bottomNineTenthsLabel.widthAnchor),
+                bottomNineTenthsLabel.widthAnchor.constraint(equalTo: topLeftEighthLabel.widthAnchor),
                 topLeftEighthLabel.widthAnchor.constraint(equalTo: topCenterLeftEighthLabel.widthAnchor),
                 topCenterLeftEighthLabel.widthAnchor.constraint(equalTo: topCenterRightEighthLabel.widthAnchor),
                 topCenterRightEighthLabel.widthAnchor.constraint(equalTo: topRightEighthLabel.widthAnchor),
@@ -835,7 +835,7 @@ class SettingsViewController: NSViewController {
                 topVerticalTwoThirdsShortcutView.widthAnchor.constraint(equalToConstant: 160),
                 bottomVerticalTwoThirdsShortcutView.widthAnchor.constraint(equalToConstant: 160),
                 centerFiveSixthsShortcutView.widthAnchor.constraint(equalToConstant: 160),
-                bottomFiveSixthsShortcutView.widthAnchor.constraint(equalToConstant: 160),
+                bottomNineTenthsShortcutView.widthAnchor.constraint(equalToConstant: 160),
                 topLeftEighthShortcutView.widthAnchor.constraint(equalToConstant: 160),
                 topCenterLeftEighthShortcutView.widthAnchor.constraint(equalToConstant: 160),
                 topCenterRightEighthShortcutView.widthAnchor.constraint(equalToConstant: 160),
@@ -856,7 +856,7 @@ class SettingsViewController: NSViewController {
                 topVerticalTwoThirdsShortcutView.leadingAnchor.constraint(equalTo: largerWidthShortcutView.leadingAnchor),
                 bottomVerticalTwoThirdsShortcutView.leadingAnchor.constraint(equalTo: largerWidthShortcutView.leadingAnchor),
                 centerFiveSixthsShortcutView.leadingAnchor.constraint(equalTo: largerWidthShortcutView.leadingAnchor),
-                bottomFiveSixthsShortcutView.leadingAnchor.constraint(equalTo: largerWidthShortcutView.leadingAnchor),
+                bottomNineTenthsShortcutView.leadingAnchor.constraint(equalTo: largerWidthShortcutView.leadingAnchor),
                 topLeftEighthShortcutView.leadingAnchor.constraint(equalTo: largerWidthShortcutView.leadingAnchor),
                 topCenterLeftEighthShortcutView.leadingAnchor.constraint(equalTo: largerWidthShortcutView.leadingAnchor),
                 topCenterRightEighthShortcutView.leadingAnchor.constraint(equalTo: largerWidthShortcutView.leadingAnchor),
